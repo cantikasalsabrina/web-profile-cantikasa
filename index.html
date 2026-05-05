@@ -1,46 +1,110 @@
-<h1>Halo, ini progres web profile Asa!</h1>.
-
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg bg-transparent">
-  <div class="container">
-    <a class="navbar-brand fw-bold" style="color: #D36582;" href="#">Asa.</a>
-    <div class="collapse navbar-collapse justify-content-center">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Portofolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Info</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO SECTION (Tampilan Utama) -->
-<div class="container mt-5">
-  <div class="row align-items-center vh-100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Profile Asa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
-    <!-- BAGIAN KIRI: Teks & Tombol -->
-    <div class="col-md-6">
-      <p class="text-muted">03/04</p>
-      <h1 class="fw-bold" style="font-size: 4rem; color: #4A2C35;">
-        Strawberry<br>Vibe.
-      </h1>
-      <p class="mt-3" style="color: #4A2C35;">
-        Halo! Saya Asa, mahasiswa Multimedia Broadcasting PENS. 
-        Selamat datang di portofolio digital saya yang memadukan desain UI/UX dan model 3D.
-      </p>
-      <button class="btn mt-4 px-4 py-2" style="background-color: #D36582; color: white; border-radius: 30px;">
-        Read More
-      </button>
-    </div>
+    <style>
+        body {
+            background-color: #FDF1F4; /* Soft Strawberry Milk */
+            font-family: 'Poppins', sans-serif;
+            color: #4A2C35; /* Cokelat Stroberi */
+            overflow-x: hidden;
+        }
 
-    <!-- BAGIAN KANAN: Karakter 3D Three.js -->
-    <div class="col-md-6">
-      <!-- Di sinilah letak Canvas untuk Three.js kamu nanti -->
-      <div id="canvas-container" style="width: 100%; height: 500px;">
-         <!-- Karakter .glb kamu akan muncul di sini (Posisi gambar cewek anime di referensimu) -->
-      </div>
-    </div>
+        .navbar-brand, .nav-link {
+            color: #4A2C35 !important;
+            font-weight: 600;
+        }
 
-  </div>
-</div>
+        .nav-link:hover {
+            color: #D36582 !important; /* Pink Stroberi */
+        }
+
+        .hero-title {
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            color: #4A2C35;
+        }
+
+        .btn-strawberry {
+            background-color: #D36582;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 30px;
+            border: none;
+            transition: 0.3s;
+        }
+
+        .btn-strawberry:hover {
+            background-color: #b05068;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        #canvas-container {
+            width: 100%;
+            height: 500px;
+            /* Placeholder agar area 3D terlihat sebelum script Three.js jalan */
+            background: radial-gradient(circle, rgba(211,101,130,0.1) 0%, rgba(253,241,244,0) 70%);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg py-4">
+        <div class="container">
+            <a class="navbar-brand fs-3" href="#">Asa.</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Info</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="container d-flex align-items-center" style="min-height: 80vh;">
+        <div class="row w-100 align-items-center">
+            <!-- Bagian Kiri: Teks Tipografi -->
+            <div class="col-md-6">
+                <p class="text-uppercase tracking-widest mb-2" style="letter-spacing: 3px; color: #D36582;">Broadcasting Student</p>
+                <h1 class="hero-title mb-4">
+                    Strawberry<br>Vibe.
+                </h1>
+                <p class="lead mb-5" style="max-width: 500px;">
+                    Mahasiswi Multimedia Broadcasting PENS.
+                </p>
+                <div class="d-flex gap-3">
+                    <button class="btn btn-strawberry shadow">Lihat Project</button>
+                    <a href="#" class="btn btn-outline-secondary rounded-pill px-4 py-2 border-0">Tentang Saya</a>
+                </div>
+            </div>
+
+            <!-- Bagian Kanan: 3D Character (Canvas) -->
+            <div class="col-md-6 text-center">
+                <div id="canvas-container">
+                    <!-- Area ini untuk Karakter 3D (.glb) kamu nanti -->
+                    <!-- Three.js akan me-render karakter di sini -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.min.js"></script>
+</body>
+</html>
