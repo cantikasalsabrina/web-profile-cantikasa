@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Profile Asa</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     
     <style>
@@ -15,6 +13,7 @@
             font-family: 'Poppins', sans-serif;
             color: #4A2C35; /* Cokelat Stroberi */
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
         .navbar-brand, .nav-link {
@@ -51,15 +50,34 @@
         #canvas-container {
             width: 100%;
             height: 500px;
-            /* Placeholder agar area 3D terlihat sebelum script Three.js jalan */
             background: radial-gradient(circle, rgba(211,101,130,0.1) 0%, rgba(253,241,244,0) 70%);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color: #D36582;
+        }
+
+        .about-img-container {
+            border: 2px dashed #D36582;
+            padding: 15px;
+            border-radius: 20px;
+            background-color: white;
         }
     </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg py-4">
+    <nav class="navbar navbar-expand-lg py-4 sticky-top bg-fdf1f4" style="background-color: #FDF1F4;">
         <div class="container">
             <a class="navbar-brand fs-3" href="#">Asa.</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -68,79 +86,99 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link px-3" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#">Portofolio</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#">Info</a></li>
-                    <li class="nav-item"><a class="nav-link px-3" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#portofolio">Portofolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-3" href="#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="container d-flex align-items-center" style="min-height: 80vh;">
+    <section class="container d-flex align-items-center" style="min-height: 85vh;">
         <div class="row w-100 align-items-center">
-            <!-- Bagian Kiri: Teks Tipografi -->
             <div class="col-md-6">
                 <p class="text-uppercase tracking-widest mb-2" style="letter-spacing: 3px; color: #D36582;">Broadcasting Student</p>
                 <h1 class="hero-title mb-4">
                     Strawberry<br>Vibe.
                 </h1>
                 <p class="lead mb-5" style="max-width: 500px;">
-                    Teknologi Multimedia and Broadcasting PENS.
+                    Teknologi Multimedia and Broadcasting PENS. Menjembatani kreativitas visual dengan fungsionalitas teknologi.
                 </p>
                 <div class="d-flex gap-3">
-                    <button class="btn btn-strawberry shadow">Lihat Project</button>
-                    <a href="#" class="btn btn-outline-secondary rounded-pill px-4 py-2 border-0">Tentang Saya</a>
+                    <a href="#portofolio" class="btn btn-strawberry shadow">Lihat Project</a>
+                    <a href="#about" class="btn btn-outline-secondary rounded-pill px-4 py-2 border-0">Tentang Saya</a>
                 </div>
             </div>
 
-            <!-- Bagian Kanan: 3D Character (Canvas) -->
             <div class="col-md-6 text-center">
                 <div id="canvas-container">
-                    <!-- Area ini untuk Karakter 3D (.glb) kamu nanti -->
-                    <!-- Three.js akan me-render karakter di sini -->
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="about-img-container shadow-sm">
+                    <img src="https://via.placeholder.com/400x500" class="img-fluid rounded-4" alt="Putri Profile">
+                </div>
+            </div>
+            <div class="col-lg-7">
+                <h2 class="fw-bold mb-4" style="color: #4A2C35;">About Me.</h2>
+                <p class="lead mb-4">
+                    Halo! Aku <strong>Putri</strong> (panggil saja <strong>Asa</strong>), mahasiswi Multimedia Broadcasting di Politeknik Elektronika Negeri Surabaya.
+                </p>
+                <p>
+                    Aku sangat tertarik pada bagaimana desain UI/UX dan elemen 3D dapat meningkatkan pengalaman bercerita di media digital. Sebagai mahasiswa PENS, aku belajar untuk menyeimbangkan sisi estetika visual dengan pemahaman teknis yang kuat.
+                </p>
+                <p>
+                    Hobiku meliputi eksplorasi desain minimalis, mengikuti tren teknologi broadcasting terbaru, dan sesekali bereksperimen dengan koding untuk mewujudkan ide-ide kreatifku.
+                </p>
+                <div class="mt-4 d-flex flex-wrap gap-2">
+                    <span class="badge rounded-pill px-3 py-2" style="background-color: #D36582;">UI/UX Design</span>
+                    <span class="badge rounded-pill px-3 py-2" style="background-color: #D36582;">Broadcasting</span>
+                    <span class="badge rounded-pill px-3 py-2" style="background-color: #D36582;">Content Creation</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Bootstrap JS Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-
-<script src="assets/js/script.js"></script>
-</body>
-</html>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="container py-5">
-    <div class="row justify-content-center text-center">
-        <div class="col-md-8">
-            <h2 class="fw-bold mb-5" style="color: #4A2C35;">Get In Touch</h2>
-            
-            <div class="row g-4">
-                <!-- Kontak Kiri -->
-                <div class="col-md-6 text-start">
-                    <p><strong>📍 Location:</strong> Surabaya, Indonesia</p>
-                    <p><strong>🎓 Education:</strong> Politeknik Elektronika Negeri Surabaya</p>
-                    <p><strong>📧 Email:</strong> csalsabeina@gmail.com</p>
-                    <p><strong>📞 Phone:</strong> +62 815-7831-0017</p>
-                </div>
+    <section id="contact" class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-md-8">
+                <h2 class="fw-bold mb-5" style="color: #4A2C35;">Get In Touch</h2>
                 
-                <!-- Kontak Kanan (Sosial Media) -->
-                <div class="col-md-6 text-start">
-                    <p><strong>📸 Instagram:</strong> @cyforea</p>
-                    <p><strong>💼 LinkedIn:</strong> linkedin.com/in/Cantika Fiqih</p>
-                    <p><strong>💻 GitHub:</strong> github.com/cantikasalsabrina</p>
-                    <p><strong>📂 Resume:</strong> <a href="#" style="color: #D36582;">Download CV (PDF)</a></p>
+                <div class="row g-4 text-start">
+                    <div class="col-md-6">
+                        <p><strong>📍 Location:</strong> Surabaya, Indonesia</p>
+                        <p><strong>🎓 Education:</strong> PENS Surabaya</p>
+                        <p><strong>📧 Email:</strong> <a href="mailto:csalsabeina@gmail.com">csalsabeina@gmail.com</a></p>
+                        <p><strong>📞 Phone:</strong> <a href="https://wa.me/6281578310017" target="_blank">+62 815-7831-0017</a></p>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/cyforea" target="_blank">@cyforea</a></p>
+                        <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/cantikafiqih" target="_blank">Cantika Fiqih</a></p>
+                        <p><strong>💻 GitHub:</strong> <a href="https://github.com/cantikasalsabrina" target="_blank">cantikasalsabrina</a></p>
+                        <p><strong>📂 Resume:</strong> <a href="#" style="color: #D36582; font-weight: bold;">Download CV (PDF)</a></p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Tombol Pesan Langsung -->
-            <div class="mt-5">
-                <a href="mailto:csalsabrina@gmail.com" class="btn btn-strawberry shadow">Kirim Pesan Sekarang</a>
+                <div class="mt-5">
+                    <a href="mailto:csalsabeina@gmail.com" class="btn btn-strawberry shadow">Kirim Pesan Sekarang</a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <footer class="text-center py-4 mt-5 border-top">
+        <p class="text-muted small">&copy; 2026 Asa. Proudly Made as a PENS Student.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
