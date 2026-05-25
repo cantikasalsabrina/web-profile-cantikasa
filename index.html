@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Profile Asa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Playfair+Display:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
     
     <style>
         body {
@@ -78,7 +78,7 @@
         .card-portofolio {
             border: none;
             border-radius: 20px;
-            transition: transform 0.3s ease, shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             background: white;
         }
@@ -101,6 +101,23 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             color: #6d414d;
+        }
+
+        /* Modal Custom Style */
+        .modal-content {
+            background-color: #FFFDFE;
+            border: none;
+            border-radius: 25px;
+        }
+        .modal-header {
+            border-bottom: 1px dashed #FDF1F4;
+        }
+        .poetry-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #4A2C35;
+            white-space: pre-line;
         }
     </style>
 </head>
@@ -204,17 +221,53 @@
 
             <div class="col-md-6 col-lg-4">
                 <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
-                    <div class="card-body p-4 d-flex flex-column justify-content-center text-center">
-                        <span class="badge-category mb-3 d-inline-block align-self-center">Kreatif</span>
-                        <h5 class="fw-bold">Antologi Puisi</h5>
-                        <p class="poetry-text my-3">"Tentang rasa yang tak sempat terucap, namun abadi dalam setiap larik kata."</p>
-                        <hr style="width: 30%; margin: 10px auto; color: #D36582;">
-                        <button class="btn btn-sm btn-outline-danger rounded-pill mt-2 mx-auto" style="width: fit-content;">Baca Selengkapnya</button>
+                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
+                        <div>
+                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
+                            <h5 class="fw-bold">Pepaya</h5>
+                            <p class="poetry-text my-3">"Buah favoritmu, buah terakhirmu sebelum pulang..."</p>
+                        </div>
+                        <div>
+                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
+                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi1">Baca Puisi</button>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-6 col-lg-8">
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
+                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
+                        <div>
+                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
+                            <h5 class="fw-bold">Cermin Kamarku</h5>
+                            <p class="poetry-text my-3">"Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan..."</p>
+                        </div>
+                        <div>
+                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
+                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi2">Baca Puisi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
+                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
+                        <div>
+                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
+                            <h5 class="fw-bold">Bisu</h5>
+                            <p class="poetry-text my-3">"Di balik bisu diri ini, terdapat kepala yang berisik..."</p>
+                        </div>
+                        <div>
+                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
+                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi3">Baca Puisi</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4">
                         <div class="row align-items-center">
@@ -260,6 +313,101 @@
             </div>
         </div>
     </section>
+
+    <div class="modal fade" id="modalPuisi1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3 shadow">
+                <div class="modal-header">
+                    <h5 class="fw-bold" style="color: #4A2C35;">Pepaya</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body poetry-body">
+                    Dinginnya di lidah mengingatkanku pada dinginnya suatu ruangan
+                    Rindu dan jiwa mengantarkanku pada tempat itu 
+                    Ia ingin disuapi
+                    Nafsu makannya begitu tinggi pada pepaya
+                    Tangan tersayang mengabulkan permintaannya 
+                    Orang menatapnya sendu
+                    Hari ini banyak-banyaklah memakan pepaya
+                    Besok-besok kau bisa memakan apapun sebanyak yang kau inginkan 
+                    Namun, pepaya
+                    Buah favoritmu
+                    Buah terakhirmu
+                    Sebelum pulang
+                    Pepaya.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPuisi2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content p-3 shadow">
+                <div class="modal-header">
+                    <h5 class="fw-bold" style="color: #4A2C35;">Cermin Kamarku</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body poetry-body">
+                    Aku tidak tau 
+                    Maraton ini rasanya sama seperti berlari di lingkaran yang sama berulang kali
+                    Hanya warna garisnya yang berbeda 
+                    Namun, rute ini sama seperti lingkaran itu 
+                    Sial, bahkan sebelum kembali aku telah mengetahuinya
+                    Aku akan kembali ke dunia yang bagaikan neraka itu
+
+                    Rasa nyaman hanya membuatmu menghilangkan arti keamanan itu sendiri 
+                    Namun, kecemasanku membuat diriku kembali ke titik awal 
+                    Ah aku bosan dengan cermin ini 
+                    Padahal sebelumnya, aku begitu menginginkannya 
+                    Ia begitu indah 
+                    Terlihat lebih menarik dari pada yang lain 
+                    Tetapi aku kan melihatnya setiap hari dan mudah saja mendapatkannya 
+                    Jadi apa istimewanya?
+                    Mengapa semua orang begitu mendambakannya?
+                    Apa yang membedakannya dengan yang lain?
+
+                    Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan
+                    Klasik sekali jawabanmu
+                    Kau selalu melihatku namun, betah sekali dengan debu-debu ini 
+                    Tolong bersihkan 
+                    Kau bahkan tak dapat bercermin dengan benar
+                    Kau tak dapat melihat wajahmu yang sebenarnya
+                    Tapi cermin itu tak akan pernah dapat berbicara 
+                    Hanya debunya yang terlihat
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalPuisi3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-3 shadow">
+                <div class="modal-header">
+                    <h5 class="fw-bold" style="color: #4A2C35;">Bisu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body poetry-body">
+                    Di balik bisu diri ini,
+                    Terdapat kepala yang berisik,
+                    Membuncah dibuatnya,
+                    Logika kehilangan akalnya,
+                    Perasaan berangsur-angsur hampa.
+
+                    Mata yang kau tatap ini,
+                    Adalah tempat air mata yang mengering.
+
+                    Bahanaku kecewa,
+                    Tak peduli dirinya tercekik pita suara,
+                    Dengan mudahnya kau bertanya di mana dia,
+                    Sudah terlambat,
+                    Ia telah pergi.
+
+                    Menyadari bahwa,
+                    Tak semua hal dapat diselesaikan oleh kata.
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer class="text-center py-4 mt-5 border-top">
         <p class="text-muted small">&copy; 2026 Asa. Proudly Made as a PENS Student.</p>
