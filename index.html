@@ -149,6 +149,62 @@
             background-color: #fef1f4;
             --poster-color: transparent;
         }
+
+        /* STYLING GRID BULAT STRAWBERRY KREATIF (REFERENCE IMAGE_8BDBC0.PNG) */
+        .grid-container-custom {
+            position: relative;
+        }
+
+        .strawberry-center-node {
+            position: absolute;
+            width: 100px;
+            height: 110px;
+            background-color: #D36582;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+            box-shadow: 0 10px 25px rgba(211, 101, 130, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: floatVibe 4s ease-in-out infinite;
+        }
+
+        /* Daun Strawberry */
+        .strawberry-center-node::before {
+            content: '';
+            position: absolute;
+            top: -8px;
+            width: 35px;
+            height: 15px;
+            background-color: #638454;
+            border-radius: 50%;
+            box-shadow: -15px 3px 0 #638454, 15px 3px 0 #638454;
+        }
+
+        /* Bintik-bintik Strawberry */
+        .strawberry-center-node::after {
+            content: '• •\n• • •\n• •';
+            white-space: pre;
+            color: #FFFDFE;
+            font-size: 10px;
+            opacity: 0.6;
+            text-align: center;
+            line-height: 1.2;
+            letter-spacing: 3px;
+        }
+
+        @keyframes floatVibe {
+            0%, 100% { transform: translate(-50%, -50%) translateY(0px); }
+            50% { transform: translate(-50%, -50%) translateY(-10px); }
+        }
+
+        /* Sembunyikan bulatan strawberry di layar hp kecil agar kartu portfolio tidak bertabrakan */
+        @media (max-width: 767.98px) {
+            .strawberry-center-node { display: none; }
+        }
     </style>
 </head>
 <body>
@@ -222,14 +278,19 @@
             <div class="mx-auto" style="width: 50px; height: 3px; background: #D36582;"></div>
         </div>
 
-        <!-- BARIS KARYA UTAMA: FORMULASI GRID 2x2 SEJAJAR (LAYOUT REFERENCE DESIGN N) -->
-        <div class="row g-4 mb-5">
+        <!-- BUNGKUSAN CONTAINER GRID KREATIF UTAMA -->
+        <div class="grid-container-custom">
             
-            <!-- KUADRAN 1: VIDEO EXPLAINER -->
-            <div class="col-md-6">
-                <div class="card card-portofolio shadow-sm h-100">
-                    <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
-                        <div>
+            <!-- ELEMEN BULATAN STRAWBERRY TENGAH GRID -->
+            <div class="strawberry-center-node"></div>
+
+            <!-- ROW BARIS PORTOFOLIO UTAMA (FORMASI 4 KUADRAN) -->
+            <div class="row g-4 mb-4">
+                
+                <!-- KUADRAN 1 (ATAS KIRI): VIDEO EXPLAINER -->
+                <div class="col-md-6">
+                    <div class="card card-portofolio shadow-sm h-100">
+                        <div class="card-body p-4 text-center">
                             <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                 <iframe src="https://www.youtube.com/embed/2ynAaR6lNgg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
@@ -239,140 +300,103 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- KUADRAN 2: ANIMASI LOGO & TYPOGRAPHY -->
-            <div class="col-md-6">
-                <div class="card card-portofolio shadow-sm h-100">
-                    <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="tab-content" id="animationTabContent">
-                                <div class="tab-pane fade show active" id="logo2d" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
-                                        <iframe src="https://www.youtube.com/embed/m3a4o84xQ3w" allowfullscreen></iframe>
+                <!-- KUADRAN 2 (ATAS KANAN): ANIMASI LOGO & TYPOGRAPHY -->
+                <div class="col-md-6">
+                    <div class="card card-portofolio shadow-sm h-100">
+                        <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="tab-content" id="animationTabContent">
+                                    <div class="tab-pane fade show active" id="logo2d" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                                            <iframe src="https://www.youtube.com/embed/m3a4o84xQ3w" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="logo3d" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                                            <iframe src="https://www.youtube.com/embed/r6VEMrHn02A" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="typo" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                                            <iframe src="https://www.youtube.com/embed/65hZ3bDDnf0" allowfullscreen></iframe>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="logo3d" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
-                                        <iframe src="https://www.youtube.com/embed/r6VEMrHn02A" allowfullscreen></iframe>
+                                <span class="badge-category mb-2 d-inline-block">Brand Identity & Kinetic</span>
+                                <h5 class="fw-bold mt-2">Logo Animation & Typography</h5>
+                                <p class="small text-muted mb-3">Eksplorasi gerak identitas visual dalam bentuk animasi serta penerapan kinetic typography yang menekankan pada kekuatan ritme.</p>
+                            </div>
+                            <ul class="nav nav-pills nav-portfolio justify-content-center gap-2" id="animationTab" role="tablist">
+                                <li class="nav-item" role="presentation"><button class="nav-link active" id="logo2d-tab" data-bs-toggle="pill" data-bs-target="#logo2d" type="button" role="tab">Logo 2D</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="logo3d-tab" data-bs-toggle="pill" data-bs-target="#logo3d" type="button" role="tab">Logo 3D</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="typo-tab" data-bs-toggle="pill" data-bs-target="#typo" type="button" role="tab">Kinetic Typo</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KUADRAN 3 (BAWAH KIRI): MODELLING 3D BLENDER -->
+                <div class="col-md-6">
+                    <div class="card card-portofolio shadow-sm h-100">
+                        <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
+                            <div>
+                                <div class="tab-content" id="meshTabContent">
+                                    <div class="tab-pane fade show active" id="model1" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                                            <model-viewer src="cat.glb" alt="3D Cat Model Asset" auto-rotate camera-controls shadow-intensity="1.5" shadow-softness="0.8" exposure="1.2" environment-image="neutral"></model-viewer>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="model2" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
+                                            <span class="text-muted small">Project 3D Kedua</span>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane fade" id="model3" role="tabpanel">
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
+                                            <span class="text-muted small">Project 3D Ketiga</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="typo" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
-                                        <iframe src="https://www.youtube.com/embed/65hZ3bDDnf0" allowfullscreen></iframe>
-                                    </div>
+                                <span class="badge-category mb-2 d-inline-block">Modelling 3D</span>
+                                <h5 class="fw-bold mt-2">Asset & Character Design</h5>
+                                <p class="small text-muted mb-3">Koleksi model objek 3D interaktif hasil rendering Blender yang dapat diputar, di-zoom, dan ditinjau dari berbagai sudut.</p>
+                            </div>
+                            <ul class="nav nav-pills nav-portfolio justify-content-center gap-2" id="meshTab" role="tablist">
+                                <li class="nav-item" role="presentation"><button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab">Cat Model</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab">Project 2</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab">Project 3</button></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KUADRAN 4 (BAWAH KANAN): KARYA LITERASI / PUISI (KINI SEJAJAR DALAM GRID 2x2) -->
+                <div class="col-md-6">
+                    <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #FFFDFE 0%, #FDF1F4 100%);">
+                        <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
+                            <span class="badge-category mb-3 d-inline-block">Literasi & Puisi</span>
+                            <h5 class="fw-bold mb-3">Antologi Puisi Karya Asa</h5>
+                            
+                            <!-- Daftar List Menu Mini Puisi yang Rapi -->
+                            <div class="d-flex flex-column gap-2 max-width-100">
+                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
+                                    <span class="small poetry-text">"Pepaya"</span>
+                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi1" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
+                                </div>
+                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
+                                    <span class="small poetry-text">"Cermin Kamarku"</span>
+                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi2" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
+                                </div>
+                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
+                                    <span class="small poetry-text">"Bisu"</span>
+                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi3" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
                                 </div>
                             </div>
-                            <span class="badge-category mb-2 d-inline-block">Brand Identity & Kinetic</span>
-                            <h5 class="fw-bold mt-2">Logo Animation & Typography</h5>
-                            <p class="small text-muted mb-3">Eksplorasi gerak identitas visual dalam bentuk animasi serta penerapan kinetic typography yang menekankan pada kekuatan ritme.</p>
-                        </div>
-                        <ul class="nav nav-pills nav-portfolio justify-content-center gap-2" id="animationTab" role="tablist">
-                            <li class="nav-item" role="presentation"><button class="nav-link active" id="logo2d-tab" data-bs-toggle="pill" data-bs-target="#logo2d" type="button" role="tab">Logo 2D</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="logo3d-tab" data-bs-toggle="pill" data-bs-target="#logo3d" type="button" role="tab">Logo 3D</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="typo-tab" data-bs-toggle="pill" data-bs-target="#typo" type="button" role="tab">Kinetic Typo</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- KUADRAN 3: MODELLING 3D BLENDER -->
-            <div class="col-md-6">
-                <div class="card card-portofolio shadow-sm h-100">
-                    <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
-                        <div>
-                            <div class="tab-content" id="meshTabContent">
-                                <div class="tab-pane fade show active" id="model1" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
-                                        <model-viewer src="cat.glb" alt="3D Cat Model Asset" auto-rotate camera-controls shadow-intensity="1.5" shadow-softness="0.8" exposure="1.2" environment-image="neutral"></model-viewer>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="model2" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
-                                        <span class="text-muted small">Project 3D Kedua</span>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="model3" role="tabpanel">
-                                    <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
-                                        <span class="text-muted small">Project 3D Ketiga</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <span class="badge-category mb-2 d-inline-block">Modelling 3D</span>
-                            <h5 class="fw-bold mt-2">Asset & Character Design</h5>
-                            <p class="small text-muted mb-3">Koleksi model objek 3D interaktif hasil rendering Blender yang dapat diputar, di-zoom, dan ditinjau dari berbagai sudut.</p>
-                        </div>
-                        <ul class="nav nav-pills nav-portfolio justify-content-center gap-2" id="meshTab" role="tablist">
-                            <li class="nav-item" role="presentation"><button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab">Cat Model</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab">Project 2</button></li>
-                            <li class="nav-item" role="presentation"><button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab">Project 3</button></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <!-- KUADRAN 4: CREATIVE SHUTTER LOG (PENYEIMBANG GRID) -->
-            <div class="col-md-6">
-                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #FFFDFE 0%, #FDF1F4 100%); border: 1px dashed #D36582;">
-                    <div class="card-body p-4 text-center d-flex flex-column justify-content-center align-items-center">
-                        <span class="badge-category mb-2">Broadcasting Log</span>
-                        <h4 class="fw-bold mt-2" style="color: #4A2C35;">Creative Production</h4>
-                        <p class="small text-muted px-3 my-3">Ruang eksplorasi digital mahasiswa MMB PENS. Menyatukan visualisasi tiga dimensi, ritme gerak sinematik, serta penataan narasi kreatif ke dalam satu harmoni web portfolio.</p>
-                        <div class="mx-auto mt-2" style="width: 40px; height: 2px; background: #D36582;"></div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- BARIS KARYA LITERASI / PUISI (FORMASI 3 KOLOM SEJAJAR) -->
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
-                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
-                        <div>
-                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
-                            <h5 class="fw-bold">Pepaya</h5>
-                            <p class="poetry-text my-3">"Buah favoritmu, buah terakhirmu sebelum pulang..."</p>
-                        </div>
-                        <div>
-                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
-                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi1">Baca Puisi</button>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
-                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
-                        <div>
-                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
-                            <h5 class="fw-bold">Cermin Kamarku</h5>
-                            <p class="poetry-text my-3">"Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan..."</p>
-                        </div>
-                        <div>
-                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
-                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi2">Baca Puisi</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
-                    <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
-                        <div>
-                            <span class="badge-category mb-3 d-inline-block">Literasi</span>
-                            <h5 class="fw-bold">Bisu</h5>
-                            <p class="poetry-text my-3">"Di balik bisu diri ini, terdapat kepala yang berisik..."</p>
-                        </div>
-                        <div>
-                            <hr style="width: 30%; margin: 10px auto; color: #D36582;">
-                            <button class="btn btn-sm btn-outline-danger rounded-pill mt-2" data-bs-toggle="modal" data-bs-target="#modalPuisi3">Baca Puisi</button>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -444,7 +468,7 @@
                     Sial, bahkan sebelum kembali aku telah mengetahuinya
                     Aku akan kembali ke dunia yang bagaikan neraka itu
 
-                    Rasa nyaman hanya membuatmu menghilangkan arti keamanan itu sendiri 
+                    Rasa nyaman hanya membuatmu menghilangkan arti keamanan itu itself 
                     Namun, kecemasanku membuat diriku kembali ke titik awal 
                     Ah aku bosan dengan cermin ini 
                     Padahal sebelumnya, aku begitu menginginkannya 
