@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Profile Asa</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
     
-    <!-- Library Google Model Viewer untuk render file .glb -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <style>
@@ -100,29 +99,6 @@
             text-transform: uppercase;
         }
 
-        .poetry-text {
-            font-family: 'Playfair Display', serif;
-            font-style: italic;
-            color: #6d414d;
-        }
-
-        /* Modal Custom Style */
-        .modal-content {
-            background-color: #FFFDFE;
-            border: none;
-            border-radius: 25px;
-        }
-        .modal-header {
-            border-bottom: 1px dashed #FDF1F4;
-        }
-        .poetry-body {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: #4A2C35;
-            white-space: pre-line;
-        }
-
         /* Custom Nav Pills for Portfolio Tabs */
         .nav-portfolio .nav-link {
             background: transparent;
@@ -150,7 +126,7 @@
             --poster-color: transparent;
         }
 
-        /* STYLING GRID BULAT STRAWBERRY KREATIF (REFERENCE IMAGE_8BDBC0.PNG) */
+        /* STYLING GRID BULAT STRAWBERRY KREATIF */
         .grid-container-custom {
             position: relative;
         }
@@ -172,7 +148,6 @@
             animation: floatVibe 4s ease-in-out infinite;
         }
 
-        /* Daun Strawberry */
         .strawberry-center-node::before {
             content: '';
             position: absolute;
@@ -184,7 +159,6 @@
             box-shadow: -15px 3px 0 #638454, 15px 3px 0 #638454;
         }
 
-        /* Bintik-bintik Strawberry */
         .strawberry-center-node::after {
             content: '• •\n• • •\n• •';
             white-space: pre;
@@ -201,9 +175,145 @@
             50% { transform: translate(-50%, -50%) translateY(-10px); }
         }
 
-        /* Sembunyikan bulatan strawberry di layar hp kecil agar kartu portfolio tidak bertabrakan */
         @media (max-width: 767.98px) {
             .strawberry-center-node { display: none; }
+        }
+
+        /* ==========================================================================
+           LAYUT DAN ANIMASI PAMERAN PUISI SEPERTI GALERI SENI (IMAGE_8B0281.PNG)
+           ========================================================================== */
+        .gallery-section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #b05068;
+        }
+
+        .poetry-gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 2.5rem;
+            padding: 40px 0;
+            perspective: 1000px; /* Memberikan kedalaman 3D saat kartu miring */
+        }
+
+        .poetry-art-card {
+            background: #FFFFFF;
+            border: 1px solid rgba(211, 101, 130, 0.15);
+            border-radius: 4px; /* Frame lukisan galeri cenderung clean kotak */
+            padding: 2.5rem 2rem;
+            width: 320px;
+            min-height: 420px;
+            box-shadow: 0 10px 30px rgba(74, 44, 53, 0.05);
+            cursor: pointer;
+            position: relative;
+            display: flex;
+            flex-column: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            
+            /* Variabel CSS yang dikontrol oleh JavaScript untuk efek miring */
+            transform: rotateY(var(--tilt-y, 0deg)) rotateX(var(--tilt-x, 0deg)) translateY(var(--scroll-y, 0px));
+            transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+        }
+
+        .poetry-art-card:hover {
+            box-shadow: 0 20px 40px rgba(211, 101, 130, 0.15);
+        }
+
+        /* Tekstur kertas kanvas di dalam frame lukisan puisi */
+        .art-canvas {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #FDF1F4;
+            background: #FFFDFE;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transform: translateZ(30px); /* Membuat tulisan terlihat mengambang di atas frame */
+        }
+
+        .poetry-gallery-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            font-size: 1.5rem;
+            color: #4A2C35;
+            margin-bottom: 1.5rem;
+        }
+
+        .poetry-gallery-snippet {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: #6d414d;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .gallery-card-footer {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D36582;
+            margin-top: 1.5rem;
+            transform: translateZ(15px);
+        }
+
+        /* MODAL PREVIEW PUISI - FOKUS DAN DIAM TANPA MIRING */
+        .modal-poetry-view {
+            background-color: rgba(253, 241, 244, 0.96); /* Overlay galeri bersih */
+        }
+
+        .modal-poetry-view .modal-content {
+            background: #FFFDFE;
+            border: 1px solid rgba(211, 101, 130, 0.2);
+            border-radius: 0px; /* Frame minimalis galeri */
+            box-shadow: 0 30px 70px rgba(74, 44, 53, 0.15);
+            padding: 3rem;
+        }
+
+        .modal-poetry-view .modal-header {
+            border-bottom: 1px dashed #e0c8ce;
+            justify-content: center;
+            padding-bottom: 1.5rem;
+        }
+
+        .modal-poetry-title {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 2.2rem;
+            color: #4A2C35;
+            text-align: center;
+        }
+
+        .modal-poetry-body {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            line-height: 2;
+            color: #4A2C35;
+            text-align: center;
+            white-space: pre-line;
+            padding: 2.5rem 1rem 1rem 1rem;
+        }
+
+        /* Responsif untuk layar HP (kartu galeri lurus ke bawah) */
+        @media (max-width: 991.98px) {
+            .poetry-gallery-container {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+            .poetry-art-card {
+                width: 100%;
+                max-width: 400px;
+                min-height: 350px;
+            }
         }
     </style>
 </head>
@@ -278,16 +388,10 @@
             <div class="mx-auto" style="width: 50px; height: 3px; background: #D36582;"></div>
         </div>
 
-        <!-- BUNGKUSAN CONTAINER GRID KREATIF UTAMA -->
-        <div class="grid-container-custom">
-            
-            <!-- ELEMEN BULATAN STRAWBERRY TENGAH GRID -->
+        <div class="grid-container-custom mb-5">
             <div class="strawberry-center-node"></div>
-
-            <!-- ROW BARIS PORTOFOLIO UTAMA (FORMASI 4 KUADRAN) -->
-            <div class="row g-4 mb-4">
+            <div class="row g-4">
                 
-                <!-- KUADRAN 1 (ATAS KIRI): VIDEO EXPLAINER -->
                 <div class="col-md-6">
                     <div class="card card-portofolio shadow-sm h-100">
                         <div class="card-body p-4 text-center">
@@ -301,7 +405,6 @@
                     </div>
                 </div>
 
-                <!-- KUADRAN 2 (ATAS KANAN): ANIMASI LOGO & TYPOGRAPHY -->
                 <div class="col-md-6">
                     <div class="card card-portofolio shadow-sm h-100">
                         <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
@@ -336,25 +439,21 @@
                     </div>
                 </div>
 
-                <!-- KUADRAN 3 (BAWAH KIRI): MODELLING 3D BLENDER -->
                 <div class="col-md-6">
                     <div class="card card-portofolio shadow-sm h-100">
                         <div class="card-body p-4 text-center d-flex flex-column justify-content-between">
                             <div>
                                 <div class="tab-content" id="meshTabContent">
-                                    <!-- Tab 1: Cat Model -->
                                     <div class="tab-pane fade show active" id="model1" role="tabpanel">
                                         <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                             <model-viewer src="cat.glb" alt="3D Cat Model Asset" auto-rotate camera-controls shadow-intensity="1.5" shadow-softness="0.8" exposure="1.2" environment-image="neutral"></model-viewer>
                                         </div>
                                     </div>
-                                    <!-- Tab 2: Cherry Model -->
                                     <div class="tab-pane fade" id="model2" role="tabpanel">
                                         <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                             <model-viewer src="cherry.glb" alt="3D Cherry Model Asset" auto-rotate camera-controls shadow-intensity="1.5" shadow-softness="0.8" exposure="1.2" environment-image="neutral"></model-viewer>
                                         </div>
                                     </div>
-                                    <!-- Tab 3: Project 3D Ketiga -->
                                     <div class="tab-pane fade" id="model3" role="tabpanel">
                                         <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
                                             <span class="text-muted small">Project 3D Ketiga</span>
@@ -374,29 +473,48 @@
                     </div>
                 </div>
 
-                <!-- KUADRAN 4 (BAWAH KANAN): KARYA LITERASI / PUISI -->
                 <div class="col-md-6">
-                    <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #FFFDFE 0%, #FDF1F4 100%);">
-                        <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
-                            <span class="badge-category mb-3 d-inline-block">Literasi & Puisi</span>
-                            <h5 class="fw-bold mb-3">Antologi Puisi Karya Asa</h5>
-                            
-                            <!-- Daftar List Menu Mini Puisi yang Rapi -->
-                            <div class="d-flex flex-column gap-2 max-width-100">
-                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
-                                    <span class="small poetry-text">"Pepaya"</span>
-                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi1" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
-                                </div>
-                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
-                                    <span class="small poetry-text">"Cermin Kamarku"</span>
-                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi2" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
-                                </div>
-                                <div class="p-2 border rounded-4 bg-white d-flex justify-content-between align-items-center">
-                                    <span class="small poetry-text">"Bisu"</span>
-                                    <button class="btn btn-xs btn-outline-danger rounded-pill" data-bs-toggle="modal" data-bs-target="#modalPuisi3" style="font-size: 0.7rem; padding: 2px 10px;">Baca</button>
-                                </div>
-                            </div>
+                    <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #FFFDFE 0%, #FDF1F4 100%); border: 1px dashed #D36582;">
+                        <div class="card-body p-4 text-center d-flex flex-column justify-content-center align-items-center">
+                            <span class="badge-category mb-2">Broadcasting Log</span>
+                            <h4 class="fw-bold mt-2" style="color: #4A2C35;">Creative Production</h4>
+                            <p class="small text-muted px-3 my-3">Ruang eksplorasi digital mahasiswa MMB PENS. Menyatukan visualisasi tiga dimensi, ritme gerak sinematik, serta penataan narasi kreatif ke dalam satu harmoni web portfolio.</p>
+                            <div class="mx-auto mt-2" style="width: 40px; height: 2px; background: #D36582;"></div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pt-5 border-top border-light">
+            <div class="text-center mb-4">
+                <p class="gallery-section-title mb-1">Exhibition of Art</p>
+                <div class="mx-auto" style="width: 30px; height: 1px; background: #D36582;"></div>
+            </div>
+
+            <div class="poetry-gallery-container">
+                
+                <div class="poetry-art-card" data-bs-toggle="modal" data-bs-target="#modalPuisi1">
+                    <div class="art-canvas">
+                        <h4 class="poetry-gallery-title">Pepaya</h4>
+                        <p class="poetry-gallery-snippet">"Buah favoritmu, buah terakhirmu sebelum pulang..."</p>
+                        <div class="gallery-card-footer">Literasi • Room I</div>
+                    </div>
+                </div>
+
+                <div class="poetry-art-card" data-bs-toggle="modal" data-bs-target="#modalPuisi2">
+                    <div class="art-canvas">
+                        <h4 class="poetry-gallery-title">Cermin Kamarku</h4>
+                        <p class="poetry-gallery-snippet">"Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan..."</p>
+                        <div class="gallery-card-footer">Literasi • Room II</div>
+                    </div>
+                </div>
+
+                <div class="poetry-art-card" data-bs-toggle="modal" data-bs-target="#modalPuisi3">
+                    <div class="art-canvas">
+                        <h4 class="poetry-gallery-title">Bisu</h4>
+                        <p class="poetry-gallery-snippet">"Di balik bisu diri ini, terdapat kepala yang berisik..."</p>
+                        <div class="gallery-card-footer">Literasi • Room III</div>
                     </div>
                 </div>
 
@@ -429,15 +547,13 @@
         </div>
     </section>
 
-    <!-- MODAL PUISI -->
-    <div class="modal fade" id="modalPuisi1" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-3 shadow">
-                <div class="modal-header">
-                    <h5 class="fw-bold" style="color: #4A2C35;">Pepaya</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade modal-poetry-view" id="modalPuisi1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-poetry-title">Pepaya</h5>
                 </div>
-                <div class="modal-body poetry-body">
+                <div class="modal-body modal-poetry-body">
                     Dinginnya di lidah mengingatkanku pada dinginnya suatu ruangan
                     Rindu dan jiwa mengantarkanku pada tempat itu 
                     Ia ingin disuapi
@@ -452,18 +568,20 @@
                     Before pulang
                     Pepaya.
                 </div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="modalPuisi2" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-            <div class="modal-content p-3 shadow">
-                <div class="modal-header">
-                    <h5 class="fw-bold" style="color: #4A2C35;">Cermin Kamarku</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade modal-poetry-view" id="modalPuisi2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
+            <div class="modal-content shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-poetry-title">Cermin Kamarku</h5>
                 </div>
-                <div class="modal-body poetry-body">
+                <div class="modal-body modal-poetry-body">
                     Aku tidak tau 
                     Maraton ini rasanya sama seperti berlari di lingkaran yang sama berulang kali
                     Hanya warna garisnya yang berbeda 
@@ -491,18 +609,20 @@
                     Tapi cermin itu tak akan pernah dapat berbicara 
                     Hanya debunya yang terlihat
                 </div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="modalPuisi3" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content p-3 shadow">
-                <div class="modal-header">
-                    <h5 class="fw-bold" style="color: #4A2C35;">Bisu</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal fade modal-poetry-view" id="modalPuisi3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content shadow">
+                <div class="modal-header border-0">
+                    <h5 class="modal-poetry-title">Bisu</h5>
                 </div>
-                <div class="modal-body poetry-body">
+                <div class="modal-body modal-poetry-body">
                     Di balik bisu diri ini,
                     Terdapat kepala yang berisik,
                     Membuncah dibuatnya,
@@ -521,6 +641,9 @@
                     Menyadari bahwa,
                     Tak semua hal dapat diselesaikan oleh kata.
                 </div>
+                <div class="text-center mt-4">
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                </div>
             </div>
         </div>
     </div>
@@ -528,6 +651,65 @@
     <footer class="text-center py-4 mt-5 border-top">
         <p class="text-muted small">&copy; 2026 Asa. Proudly Made as a PENS Student.</p>
     </footer>
+
+    <script>
+        const cards = document.querySelectorAll('.poetry-art-card');
+
+        // 1. Efek Parallax Tilt Mengikuti Gerakan Kursor Mouse
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const cardRect = card.getBoundingClientRect();
+                const cardWidth = cardRect.width;
+                const cardHeight = cardRect.height;
+                
+                // Menghitung titik tengah kartu
+                const centerX = cardRect.left + cardWidth / 2;
+                const centerY = cardRect.top + cardHeight / 2;
+                
+                // Menghitung jarak kursor dari titik tengah kartu
+                const mouseX = e.clientX - centerX;
+                const mouseY = e.clientY - centerY;
+                
+                // Mengubahnya menjadi derajat kemiringan (maksimal miring 12 derajat)
+                const rotateX = (-mouseY / cardHeight) * 12;
+                const rotateY = (mouseX / cardWidth) * 12;
+                
+                card.style.setProperty('--tilt-x', `${rotateX}deg`);
+                card.style.setProperty('--tilt-y', `${rotateY}deg`);
+            });
+
+            // Kembalikan ke posisi semula saat mouse keluar dari kartu
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--tilt-x', '0deg');
+                card.style.setProperty('--tilt-y', '0deg');
+            });
+        });
+
+        // 2. Efek Gerak Miring Bergelombang Lembut Mengikuti Kecepatan Scroll Halaman
+        let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollDelta = currentScroll - lastScrollTop;
+            lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+
+            // Membatasi pergeseran miring maksimal agar tetap nyaman dipandang
+            const motionY = Math.min(Math.max(scrollDelta * 0.15, -15), 15);
+
+            cards.forEach((card, index) => {
+                // Memberikan sedikit perbedaan waktu delay (wave effect) antar kartu 1, 2, dan 3
+                const delayFactor = (index + 1) * 0.2;
+                card.style.setProperty('--scroll-y', `${motionY * delayFactor}px`);
+            });
+
+            // Kembalikan posisi vertikal kartu secara perlahan setelah scroll berhenti
+            setTimeout(() => {
+                cards.forEach(card => {
+                    card.style.setProperty('--scroll-y', '0px');
+                });
+            }, 150);
+        });
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
