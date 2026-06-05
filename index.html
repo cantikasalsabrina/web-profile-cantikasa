@@ -7,6 +7,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
     
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+
     <style>
         body {
             background-color: #FDF1F4; /* Soft Strawberry Milk */
@@ -139,6 +141,14 @@
             color: white !important;
             border-color: #D36582;
         }
+
+        /* Tampilan khusus box penampung Model 3D */
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #fef1f4;
+            --poster-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -213,39 +223,76 @@
         </div>
 
         <div class="row g-4">
-            <!-- PORTOFOLIO 1: VIDEO EXPLAINER -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
-                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
-                            <iframe src="https://www.youtube.com/embed/2ynAaR6lNgg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        
+                        <div class="tab-content" id="meshTabContent">
+                            <div class="tab-pane fade show active" id="model1" role="tabpanel" aria-labelledby="model1-tab">
+                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm" style="background-color: #fef1f4;">
+                                    <model-viewer 
+                                        src="cat.glb" 
+                                        alt="3D Cat Model Asset buatan Asa" 
+                                        auto-rotate 
+                                        camera-controls 
+                                        shadow-intensity="1" 
+                                        environment-image="neutral">
+                                    </model-viewer>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="model2" role="tabpanel" aria-labelledby="model2-tab">
+                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
+                                    <span class="text-muted small">Project 3D Kedua</span>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="model3" role="tabpanel" aria-labelledby="model3-tab">
+                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
+                                    <span class="text-muted small">Project 3D Ketiga</span>
+                                </div>
+                            </div>
                         </div>
-                        <span class="badge-category mb-2 d-inline-block">Motion Graphics</span>
-                        <h5 class="fw-bold mt-2">Video Explainer Showcase</h5>
-                        <p class="small text-muted">Proyek animasi infografis yang menggabungkan elemen visual dinamis, narasi terstruktur, dan penyelarasan audio untuk menyampaikan informasi secara interaktif.</p>
+
+                        <span class="badge-category mb-2 d-inline-block">Modelling 3D</span>
+                        <h5 class="fw-bold mt-2">Asset & Character Design</h5>
+                        <p class="small text-muted">Koleksi model objek 3D interaktif hasil rendering Blender yang dapat diputar, di-zoom, dan ditinjau dari berbagai sudut pandang.</p>
+                        
+                        <ul class="nav nav-pills nav-portfolio justify-content-center gap-2 mt-3" id="meshTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab" aria-controls="model1" aria-selected="true">
+                                    Cat Model
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab" aria-controls="model2" aria-selected="false">
+                                    Project 2
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab" aria-controls="model3" aria-selected="false">
+                                    Project 3
+                                </button>
+                            </li>
+                        </ul>
+
                     </div>
                 </div>
             </div>
 
-            <!-- PORTOFOLIO 2: ANIMASI LOGO & TYPOGRAPHY -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
                         
                         <div class="tab-content" id="animationTabContent">
-                            <!-- Tab 1: Logo 2D -->
                             <div class="tab-pane fade show active" id="logo2d" role="tabpanel" aria-labelledby="logo2d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/m3a4o84xQ3w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!-- Tab 2: Logo 3D -->
                             <div class="tab-pane fade" id="logo3d" role="tabpanel" aria-labelledby="logo3d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/r6VEMrHn02A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!-- Tab 3: Kinetic Typography -->
                             <div class="tab-pane fade" id="typo" role="tabpanel" aria-labelledby="typo-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/65hZ3bDDnf0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -279,7 +326,6 @@
                 </div>
             </div>
 
-            <!-- PORTOFOLIO PUISI -->
             <div class="col-md-6 col-lg-4">
                 <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
                     <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
@@ -355,7 +401,6 @@
         </div>
     </section>
 
-    <!-- MODAL PUISI -->
     <div class="modal fade" id="modalPuisi1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-3 shadow">
@@ -406,7 +451,7 @@
                     Tetapi aku kan melihatnya setiap hari dan mudah saja mendapatkannya 
                     Jadi apa istimewanya?
                     Mengapa semua orang begitu mendambakannya?
-                    Apa yang membedakannya dengan yang lain?
+                    What membedakannya dengan yang lain?
 
                     Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan
                     Klasik sekali jawabanmu
