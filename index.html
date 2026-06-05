@@ -7,7 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
     
-    <!-- Library Google Model Viewer untuk render file .glb interaktif & halus -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <style>
@@ -143,7 +142,7 @@
             border-color: #D36582;
         }
 
-        /* Penyetelan canvas rendering 3D agar maksimal & halus */
+        /* Setingan khusus box penampung 3D */
         model-viewer {
             width: 100%;
             height: 100%;
@@ -224,121 +223,93 @@
         </div>
 
         <div class="row g-4">
-            <!-- PORTOFOLIO 1: MODELLING 3D BLENDER (TAB SYSTEM INTERAKTIF) -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
-                        
-                        <div class="tab-content" id="meshTabContent">
-                            <!-- Tab 1: Model Kucing (cat.glb) -->
-                            <div class="tab-pane fade show active" id="model1" role="tabpanel" aria-labelledby="model1-tab">
-                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm" style="background-color: #fef1f4;">
-                                    <!-- Konfigurasi render sehalus mungkin dengan bayangan natural -->
-                                    <model-viewer 
-                                        src="cat.glb" 
-                                        alt="3D Cat Model Asset buatan Asa" 
-                                        auto-rotate 
-                                        camera-controls 
-                                        shadow-intensity="1"
-                                        shadow-softness="1"
-                                        exposure="1.2"
-                                        environment-image="neutral">
-                                    </model-viewer>
-                                </div>
-                            </div>
-                            <!-- Tab 2: Project 3D Kedua -->
-                            <div class="tab-pane fade" id="model2" role="tabpanel" aria-labelledby="model2-tab">
-                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
-                                    <span class="text-muted small">Project 3D Kedua</span>
-                                </div>
-                            </div>
-                            <!-- Tab 3: Project 3D Ketiga -->
-                            <div class="tab-pane fade" id="model3" role="tabpanel" aria-labelledby="model3-tab">
-                                <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
-                                    <span class="text-muted small">Project 3D Ketiga</span>
-                                </div>
-                            </div>
+                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                            <iframe src="https://www.youtube.com/embed/2ynAaR6lNgg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-
-                        <span class="badge-category mb-2 d-inline-block">Modelling 3D</span>
-                        <h5 class="fw-bold mt-2">Asset & Character Design</h5>
-                        <p class="small text-muted">Koleksi model objek 3D interaktif hasil rendering Blender yang dapat diputar, di-zoom, dan ditinjau dari berbagai sudut pandang.</p>
-                        
-                        <ul class="nav nav-pills nav-portfolio justify-content-center gap-2 mt-3" id="meshTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab" aria-controls="model1" aria-selected="true">
-                                    Cat Model
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab" aria-controls="model2" aria-selected="false">
-                                    Project 2
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab" aria-controls="model3" aria-selected="false">
-                                    Project 3
-                                </button>
-                            </li>
-                        </ul>
-
+                        <span class="badge-category mb-2 d-inline-block">Motion Graphics</span>
+                        <h5 class="fw-bold mt-2">Video Explainer Showcase</h5>
+                        <p class="small text-muted">Proyek animasi infografis yang menggabungkan elemen visual dinamis, narasi terstruktur, dan penyelarasan audio untuk menyampaikan informasi secara interaktif.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- PORTOFOLIO 2: ANIMASI LOGO & TYPOGRAPHY -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
-                        
                         <div class="tab-content" id="animationTabContent">
-                            <!-- Tab 1: Logo 2D -->
                             <div class="tab-pane fade show active" id="logo2d" role="tabpanel" aria-labelledby="logo2d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/m3a4o84xQ3w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!-- Tab 2: Logo 3D -->
                             <div class="tab-pane fade" id="logo3d" role="tabpanel" aria-labelledby="logo3d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/r6VEMrHn02A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
-                            <!-- Tab 3: Kinetic Typography -->
                             <div class="tab-pane fade" id="typo" role="tabpanel" aria-labelledby="typo-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/65hZ3bDDnf0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
                         </div>
-
                         <span class="badge-category mb-2 d-inline-block">Brand Identity & Kinetic</span>
                         <h5 class="fw-bold mt-2">Logo Animation & Typography</h5>
                         <p class="small text-muted">Eksplorasi gerak identitas visual dalam bentuk animasi serta penerapan kinetic typography yang menekankan pada kekuatan ritme dan estetika teks.</p>
-                        
                         <ul class="nav nav-pills nav-portfolio justify-content-center gap-2 mt-3" id="animationTab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="logo2d-tab" data-bs-toggle="pill" data-bs-target="#logo2d" type="button" role="tab" aria-controls="logo2d" aria-selected="true">
-                                    Logo 2D
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="logo3d-tab" data-bs-toggle="pill" data-bs-target="#logo3d" type="button" role="tab" aria-controls="logo3d" aria-selected="false">
-                                    Logo 3D
-                                </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="typo-tab" data-bs-toggle="pill" data-bs-target="#typo" type="button" role="tab" aria-controls="typo" aria-selected="false">
-                                    Kinetic Typo
-                                </button>
-                            </li>
+                            <li class="nav-item" role="presentation"><button class="nav-link active" id="logo2d-tab" data-bs-toggle="pill" data-bs-target="#logo2d" type="button" role="tab" aria-controls="logo2d" aria-selected="true">Logo 2D</button></li>
+                            <li class="nav-item" role="presentation"><button class="nav-link" id="logo3d-tab" data-bs-toggle="pill" data-bs-target="#logo3d" type="button" role="tab" aria-controls="logo3d" aria-selected="false">Logo 3D</button></li>
+                            <li class="nav-item" role="presentation"><button class="nav-link" id="typo-tab" data-bs-toggle="pill" data-bs-target="#typo" type="button" role="tab" aria-controls="typo" aria-selected="false">Kinetic Typo</button></li>
                         </ul>
-
                     </div>
                 </div>
             </div>
 
-            <!-- PORTOFOLIO PUISI -->
+            <div class="col-md-12">
+                <div class="card card-portofolio shadow-sm">
+                    <div class="card-body p-4 text-center">
+                        <div class="tab-content" id="meshTabContent">
+                            <div class="tab-pane fade show active" id="model1" role="tabpanel" aria-labelledby="model1-tab">
+                                <div class="ratio ratio-21x9 mb-3 rounded-4 overflow-hidden border shadow-sm" style="background-color: #fef1f4; min-height: 350px;">
+                                    <model-viewer 
+                                        src="cat.glb" 
+                                        alt="3D Cat Model Asset" 
+                                        auto-rotate 
+                                        camera-controls 
+                                        shadow-intensity="1.5"
+                                        shadow-softness="1"
+                                        exposure="1.3"
+                                        interpolation-decay="200"
+                                        environment-image="neutral">
+                                    </model-viewer>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="model2" role="tabpanel" aria-labelledby="model2-tab">
+                                <div class="ratio ratio-21x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4; min-height: 350px;">
+                                    <span class="text-muted small">Project 3D Kedua</span>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="model3" role="tabpanel" aria-labelledby="model3-tab">
+                                <div class="ratio ratio-21x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4; min-height: 350px;">
+                                    <span class="text-muted small">Project 3D Ketiga</span>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="badge-category mb-2 d-inline-block">Modelling 3D</span>
+                        <h5 class="fw-bold mt-2">Asset & Character Design</h5>
+                        <p class="small text-muted">Koleksi model objek 3D interaktif hasil rendering Blender yang dapat diputar, di-zoom, dan ditinjau dari berbagai sudut.</p>
+                        <ul class="nav nav-pills nav-portfolio justify-content-center gap-2 mt-3" id="meshTab" role="tablist">
+                            <li class="nav-item" role="presentation"><button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab" aria-controls="model1" aria-selected="true">Cat Model</button></li>
+                            <li class="nav-item" role="presentation"><button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab" aria-controls="model2" aria-selected="false">Project 2</button></li>
+                            <li class="nav-item" role="presentation"><button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab" aria-controls="model3" aria-selected="false">Project 3</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-md-6 col-lg-4">
                 <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
                     <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
@@ -414,7 +385,6 @@
         </div>
     </section>
 
-    <!-- MODAL PUISI -->
     <div class="modal fade" id="modalPuisi1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-3 shadow">
@@ -434,7 +404,7 @@
                     Namun, pepaya
                     Buah favoritmu
                     Buah terakhirmu
-                    Sebelum pulang
+                    Before pulang
                     Pepaya.
                 </div>
             </div>
@@ -499,7 +469,7 @@
 
                     Bahanaku kecewa,
                     Tak peduli dirinya tercekik pita suara,
-                    Dengan mudahnya kau bertanya di mana dia,
+                    With mudahnya kau bertanya di mana dia,
                     Sudah terlambat,
                     Ia telah pergi.
 
@@ -515,8 +485,5 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-    <script src="assets/js/script.js"></script>
 </body>
 </html>
