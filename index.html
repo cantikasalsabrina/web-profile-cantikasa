@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
     
+    <!-- Library Google Model Viewer untuk render file .glb interaktif & halus -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <style>
@@ -142,7 +143,7 @@
             border-color: #D36582;
         }
 
-        /* Tampilan khusus box penampung Model 3D */
+        /* Penyetelan canvas rendering 3D agar maksimal & halus */
         model-viewer {
             width: 100%;
             height: 100%;
@@ -223,28 +224,35 @@
         </div>
 
         <div class="row g-4">
+            <!-- PORTOFOLIO 1: MODELLING 3D BLENDER (TAB SYSTEM INTERAKTIF) -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
                         
                         <div class="tab-content" id="meshTabContent">
+                            <!-- Tab 1: Model Kucing (cat.glb) -->
                             <div class="tab-pane fade show active" id="model1" role="tabpanel" aria-labelledby="model1-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm" style="background-color: #fef1f4;">
+                                    <!-- Konfigurasi render sehalus mungkin dengan bayangan natural -->
                                     <model-viewer 
                                         src="cat.glb" 
                                         alt="3D Cat Model Asset buatan Asa" 
                                         auto-rotate 
                                         camera-controls 
-                                        shadow-intensity="1" 
+                                        shadow-intensity="1"
+                                        shadow-softness="1"
+                                        exposure="1.2"
                                         environment-image="neutral">
                                     </model-viewer>
                                 </div>
                             </div>
+                            <!-- Tab 2: Project 3D Kedua -->
                             <div class="tab-pane fade" id="model2" role="tabpanel" aria-labelledby="model2-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
                                     <span class="text-muted small">Project 3D Kedua</span>
                                 </div>
                             </div>
+                            <!-- Tab 3: Project 3D Ketiga -->
                             <div class="tab-pane fade" id="model3" role="tabpanel" aria-labelledby="model3-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
                                     <span class="text-muted small">Project 3D Ketiga</span>
@@ -278,21 +286,25 @@
                 </div>
             </div>
 
+            <!-- PORTOFOLIO 2: ANIMASI LOGO & TYPOGRAPHY -->
             <div class="col-md-6">
                 <div class="card card-portofolio shadow-sm h-100">
                     <div class="card-body p-4 text-center">
                         
                         <div class="tab-content" id="animationTabContent">
+                            <!-- Tab 1: Logo 2D -->
                             <div class="tab-pane fade show active" id="logo2d" role="tabpanel" aria-labelledby="logo2d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/m3a4o84xQ3w" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
+                            <!-- Tab 2: Logo 3D -->
                             <div class="tab-pane fade" id="logo3d" role="tabpanel" aria-labelledby="logo3d-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/r6VEMrHn02A" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                 </div>
                             </div>
+                            <!-- Tab 3: Kinetic Typography -->
                             <div class="tab-pane fade" id="typo" role="tabpanel" aria-labelledby="typo-tab">
                                 <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
                                     <iframe src="https://www.youtube.com/embed/65hZ3bDDnf0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -326,6 +338,7 @@
                 </div>
             </div>
 
+            <!-- PORTOFOLIO PUISI -->
             <div class="col-md-6 col-lg-4">
                 <div class="card card-portofolio shadow-sm h-100" style="background: linear-gradient(135deg, #fff 0%, #fff0f3 100%);">
                     <div class="card-body p-4 d-flex flex-column justify-content-between text-center">
@@ -401,6 +414,7 @@
         </div>
     </section>
 
+    <!-- MODAL PUISI -->
     <div class="modal fade" id="modalPuisi1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-3 shadow">
@@ -451,7 +465,7 @@
                     Tetapi aku kan melihatnya setiap hari dan mudah saja mendapatkannya 
                     Jadi apa istimewanya?
                     Mengapa semua orang begitu mendambakannya?
-                    What membedakannya dengan yang lain?
+                    Apa yang membedakannya dengan yang lain?
 
                     Cermin itu berbicara, mungkin ia muak melihat wajah sang tuan
                     Klasik sekali jawabanmu
@@ -485,7 +499,7 @@
 
                     Bahanaku kecewa,
                     Tak peduli dirinya tercekik pita suara,
-                    With mudahnya kau bertanya di mana dia,
+                    Dengan mudahnya kau bertanya di mana dia,
                     Sudah terlambat,
                     Ia telah pergi.
 
