@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:ital,wght@1,500;1,600;1,700&display=swap" rel="stylesheet">
     
+    <!-- Library Google Model Viewer untuk render file .glb -->
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
 
     <style>
@@ -210,7 +211,7 @@
             cursor: pointer;
             position: relative;
             display: flex;
-            flex-column: column;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
             text-align: center;
@@ -314,6 +315,23 @@
                 max-width: 400px;
                 min-height: 350px;
             }
+        }
+
+        /* CUSTOM FORM FLOATING STYLE UNTUK CONTACT EDITORIAL GRID */
+        .form-floating > .form-control:focus ~ label,
+        .form-floating > .form-control:not(:placeholder-shown) ~ label {
+            color: #D36582 !important;
+            opacity: 0.8;
+        }
+        .form-control:focus {
+            box-shadow: none !important;
+        }
+        .hover-link {
+            color: #6d414d;
+            transition: color 0.2s ease;
+        }
+        .hover-link:hover {
+            color: #D36582;
         }
     </style>
 </head>
@@ -493,7 +511,6 @@
             </div>
 
             <div class="poetry-gallery-container">
-                
                 <div class="poetry-art-card" data-bs-toggle="modal" data-bs-target="#modalPuisi1">
                     <div class="art-canvas">
                         <h4 class="poetry-gallery-title">Pepaya</h4>
@@ -517,36 +534,114 @@
                         <div class="gallery-card-footer">Literasi • Room III</div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================================================
+         AREA CONTACT ME: LAYOUT MINIMALIS GALERI UGC ASIMETRIS (BARU & FRESH)
+         ========================================================================== -->
+    <section id="contact" class="py-5" style="background: linear-gradient(180deg, #FDF1F4 0%, #FFFDFE 100%);">
+        <div class="container py-5">
+            <div class="row g-5 align-items-start">
+                
+                <!-- KOLOM KIRI: TYPOGRAPHY EDITORIAL KREATIF -->
+                <div class="col-lg-5">
+                    <p class="text-uppercase tracking-widest mb-2" style="letter-spacing: 4px; color: #D36582; font-size: 0.8rem;">Let's Work Together</p>
+                    <h2 class="display-4 fw-bold mb-4" style="font-family: 'Playfair Display', serif; color: #4A2C35; line-height: 1.2;">GET IN<br>TOUCH.</h2>
+                    <p class="text-muted mb-5" style="max-width: 360px; line-height: 1.8;">
+                        Punya proyek kreatif, tugas kolaborasi broadcasting, atau ingin berdiskusi seputar visual art? Mari wujudkan ide hebatmu menjadi nyata.
+                    </p>
+                    
+                    <!-- INFORMASI DETAIL KONTAK MINIMALIS -->
+                    <div class="d-flex flex-column gap-4 pt-2">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center border rounded-circle" style="width: 40px; height: 40px; border-color: #e0c8ce !important; color: #D36582;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/></svg>
+                            </div>
+                            <div>
+                                <small class="text-uppercase text-muted d-block" style="font-size: 0.65rem; letter-spacing: 1px;">Location</small>
+                                <span style="color: #4A2C35; font-weight: 500; font-size: 0.95rem;">Surabaya, Indonesia</span>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center border rounded-circle" style="width: 40px; height: 40px; border-color: #e0c8ce !important; color: #D36582;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16"><path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/></svg>
+                            </div>
+                            <div>
+                                <small class="text-uppercase text-muted d-block" style="font-size: 0.65rem; letter-spacing: 1px;">Email Me</small>
+                                <a href="mailto:csalsabrina@gmail.com" style="color: #4A2C35; font-weight: 500; font-size: 0.95rem;" class="p-0 d-inline">csalsabrina@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center border rounded-circle" style="width: 40px; height: 40px; border-color: #e0c8ce !important; color: #D36582;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16"><path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/></svg>
+                            </div>
+                            <div>
+                                <small class="text-uppercase text-muted d-block" style="font-size: 0.65rem; letter-spacing: 1px;">Instagram</small>
+                                <a href="https://instagram.com/cyforea" target="_blank" style="color: #4A2C35; font-weight: 500; font-size: 0.95rem;" class="hover-link">@cyforea</a>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="d-flex align-items-center justify-content-center border rounded-circle" style="width: 40px; height: 40px; border-color: #e0c8ce !important; color: #D36582;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16"><path d="M3.654 1.328a.678.678 0 0 0-.57-.387L1.59.8a.678.678 0 0 0-.661.577l-.254 1.319a4.032 4.032 0 0 0 .254 1.492l2.135 5.461a.678.678 0 0 0 .596.442l1.318.254a.678.678 0 0 0 .577-.661l.8-3.494a.678.678 0 0 0-.387-.57l-2.14-1.13a.678.678 0 0 0-.742.072L3.654 1.328zM1.711.233a1.678 1.678 0 0 1 1.411.96l.8 3.494a1.678 1.678 0 0 1-.956 1.41l-2.14 1.13a1.678 1.678 0 0 1-1.833-.178L.152 4.195a1.678 1.678 0 0 1 .178-1.833L1.58.534a1.678 1.678 0 0 1 .13-.301z"/></svg>
+                            </div>
+                            <div>
+                                <small class="text-uppercase text-muted d-block" style="font-size: 0.65rem; letter-spacing: 1px;">Phone / WhatsApp</small>
+                                <a href="https://wa.me/6281578310017" target="_blank" style="color: #4A2C35; font-weight: 500; font-size: 0.95rem;" class="hover-link">+62 815-7831-0017</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KOLOM KANAN: FORMULIR INTERAKTIF PRESTISIUS -->
+                <div class="col-lg-7">
+                    <div class="p-4 p-md-5 bg-white rounded-4 shadow-sm border border-light">
+                        <form action="mailto:csalsabrina@gmail.com" method="post" enctype="text/plain">
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-1">
+                                        <input type="text" class="form-control border-0 border-bottom rounded-0 px-0" id="nameInput" placeholder="Your Name" style="border-color: #e0c8ce !important; background: transparent; color: #4A2C35;" required>
+                                        <label for="nameInput" class="px-0 text-muted small">Your Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating mb-1">
+                                        <input type="email" class="form-control border-0 border-bottom rounded-0 px-0" id="emailInput" placeholder="Email Address" style="border-color: #e0c8ce !important; background: transparent; color: #4A2C35;" required>
+                                        <label for="emailInput" class="px-0 text-muted small">Email Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating mb-4">
+                                        <textarea class="form-control border-0 border-bottom rounded-0 px-0" id="messageInput" placeholder="Your Message" style="border-color: #e0c8ce !important; background: transparent; color: #4A2C35; height: 120px; resize: none;" required></textarea>
+                                        <label for="messageInput" class="px-0 text-muted small">Your Message</label>
+                                    </div>
+                                </div>
+                                
+                                <!-- MENU SOSMED DAN DOWNLOAD LINK LINK SECARA MINIMALIS -->
+                                <div class="col-12 d-flex flex-wrap align-items-center justify-content-between gap-3 pt-2">
+                                    <div class="d-flex gap-3 small text-muted">
+                                        <a href="https://linkedin.com/in/cantikafiqih" target="_blank" class="hover-link">LinkedIn</a>
+                                        <span>/</span>
+                                        <a href="https://github.com/cantikasalsabrina" target="_blank" class="hover-link">GitHub</a>
+                                        <span>/</span>
+                                        <a href="#" style="color: #D36582; font-weight: 600;">Download CV (PDF)</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-strawberry px-4 py-2 shadow-sm">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
             </div>
         </div>
     </section>
 
-    <section id="contact" class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-8">
-                <h2 class="fw-bold mb-5" style="color: #4A2C35;">Get In Touch</h2>
-                <div class="row g-4 text-start">
-                    <div class="col-md-6">
-                        <p><strong>📍 Location:</strong> Surabaya, Indonesia</p>
-                        <p><strong>🎓 Education:</strong> PENS Surabaya</p>
-                        <p><strong>📧 Email:</strong> <a href="mailto:csalsabrina@gmail.com">csalsabrina@gmail.com</a></p>
-                        <p><strong>📞 Phone:</strong> <a href="https://wa.me/6281578310017" target="_blank">+62 815-7831-0017</a></p>
-                    </div>
-                    <div class="col-md-6">
-                        <p><strong>📸 Instagram:</strong> <a href="https://instagram.com/cyforea" target="_blank">@cyforea</a></p>
-                        <p><strong>💼 LinkedIn:</strong> <a href="https://linkedin.com/in/cantikafiqih" target="_blank">Cantika Fiqih</a></p>
-                        <p><strong>💻 GitHub:</strong> <a href="https://github.com/cantikasalsabrina" target="_blank">cantikasalsabrina</a></p>
-                        <p><strong>📂 Resume:</strong> <a href="#" style="color: #D36582; font-weight: bold;">Download CV (PDF)</a></p>
-                    </div>
-                </div>
-                <div class="mt-5">
-                    <a href="mailto:csalsabrina@gmail.com" class="btn btn-strawberry shadow">Kirim Pesan Sekarang</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+    <!-- MODAL PREVIEW PUISI - FOKUS DAN DIAM TANPA MIRING -->
     <div class="modal fade modal-poetry-view" id="modalPuisi1" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content shadow">
@@ -569,7 +664,7 @@
                     Pepaya.
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalPuisi1" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
                 </div>
             </div>
         </div>
@@ -610,7 +705,7 @@
                     Hanya debunya yang terlihat
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalPuisi2" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
                 </div>
             </div>
         </div>
@@ -642,7 +737,7 @@
                     Tak semua hal dapat diselesaikan oleh kata.
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalPuisi3" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
                 </div>
             </div>
         </div>
