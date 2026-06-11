@@ -49,10 +49,18 @@
             transform: translateY(-3px);
         }
 
-        #canvas-container {
+        /* Container Hero 3D khusus agar proporsional dan transparan */
+        #canvas-container-hero {
             width: 100%;
-            height: 500px;
-            background: radial-gradient(circle, rgba(211,101,130,0.1) 0%, rgba(253,241,244,0) 70%);
+            height: 480px;
+            position: relative;
+        }
+
+        #canvas-container-hero model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            --poster-color: transparent;
         }
 
         section {
@@ -360,7 +368,18 @@
                 </div>
             </div>
             <div class="col-md-6 text-center">
-                <div id="canvas-container"></div>
+                <div id="canvas-container-hero">
+                    <model-viewer 
+                        src="cat.glb" 
+                        alt="3D Interactive Cat Showcase Hero" 
+                        auto-rotate 
+                        camera-controls 
+                        shadow-intensity="1" 
+                        exposure="1.2"
+                        camera-orbit="0deg 75deg 105%"
+                        environment-image="neutral">
+                    </model-viewer>
+                </div>
             </div>
         </div>
     </section>
@@ -620,7 +639,7 @@
                     <h5 class="modal-poetry-title">Pepaya</h5>
                 </div>
                 <div class="modal-body modal-poetry-body">
-                    Dinginnya di lidah remindingatkanku pada dinginnya suatu ruangan
+                    Dinginnya di lidah mengingatkanku pada dinginnya suatu ruangan
                     Rindu dan jiwa mengantarkanku pada tempat itu 
                     Ia ingin disuapi
                     Nafsu makannya begitu tinggi pada pepaya
@@ -721,22 +740,16 @@
     <script>
         const cards = document.querySelectorAll('.poetry-art-card');
 
-        // 1. Efek Parallax Tilt Mengikuti Gerakan Kursor Mouse
+        // Efek Parallax Tilt Mengikuti Gerakan Kursor Mouse
         cards.forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const cardRect = card.getBoundingClientRect();
                 const cardWidth = cardRect.width;
                 const cardHeight = cardRect.height;
-                
-                // Menghitung titik tengah kartu
                 const centerX = cardRect.left + cardWidth / 2;
                 const centerY = cardRect.top + cardHeight / 2;
-                
-                // Menghitung jarak kursor dari titik tengah kartu
                 const mouseX = e.clientX - centerX;
                 const mouseY = e.clientY - centerY;
-                
-                // Mengubahnya menjadi derajat kemiringan (maksimal miring 12 derajat)
                 const rotateX = (-mouseY / cardHeight) * 12;
                 const rotateY = (mouseX / cardWidth) * 12;
                 
@@ -744,31 +757,26 @@
                 card.style.setProperty('--tilt-y', `${rotateY}deg`);
             });
 
-            // Kembalikan ke posisi semula saat mouse keluar dari kartu
             card.addEventListener('mouseleave', () => {
                 card.style.setProperty('--tilt-x', '0deg');
                 card.style.setProperty('--tilt-y', '0deg');
             });
         });
 
-        // 2. Efek Gerak Miring Bergelombang Lembut Mengikuti Kecepatan Scroll Halaman
+        // Efek Gerak Miring Bergelombang Lembut Mengikuti Kecepatan Scroll Halaman
         let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
             const scrollDelta = currentScroll - lastScrollTop;
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-
-            // Membatasi pergeseran miring maksimal agar tetap nyaman dipandang
             const motionY = Math.min(Math.max(scrollDelta * 0.15, -15), 15);
 
             cards.forEach((card, index) => {
-                // Memberikan sedikit perbedaan waktu delay (wave effect) antar kartu 1, 2, dan 3
                 const delayFactor = (index + 1) * 0.2;
                 card.style.setProperty('--scroll-y', `${motionY * delayFactor}px`);
             });
 
-            // Kembalikan posisi vertikal kartu secara perlahan setelah scroll berhenti
             setTimeout(() => {
                 cards.forEach(card => {
                     card.style.setProperty('--scroll-y', '0px');
