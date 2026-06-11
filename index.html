@@ -67,21 +67,19 @@
             padding: 80px 0;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: 0.3s;
+        /* OUTLINE PREMIUM MENGIKUTI SILUET ASLI FOTO TRANSPARAN ASA */
+        .asa-silhouette-profile {
+            max-height: 500px;
+            width: auto;
+            object-fit: cover;
+            /* Efek outline ganda yang menyatu mengikuti lekuk tepi tubuh */
+            filter: drop-shadow(0px 0px 2px #D36582) drop-shadow(0px 0px 15px rgba(211, 101, 130, 0.4));
+            transition: transform 0.4s ease, filter 0.4s ease;
         }
 
-        a:hover {
-            color: #D36582;
-        }
-
-        .about-img-container {
-            border: 2px dashed #D36582;
-            padding: 15px;
-            border-radius: 20px;
-            background-color: white;
+        .asa-silhouette-profile:hover {
+            transform: scale(1.03);
+            filter: drop-shadow(0px 0px 3px #D36582) drop-shadow(0px 0px 25px rgba(211, 101, 130, 0.6));
         }
 
         /* Portfolio Cards Custom Styling */
@@ -386,10 +384,8 @@
 
     <section id="about" class="container">
         <div class="row align-items-center g-5">
-            <div class="col-lg-5">
-                <div class="about-img-container shadow-sm text-center">
-                    <img src="public/img/Asa boneka.PNG" class="img-fluid rounded-4" alt="Asa Profile" style="max-height: 500px; width: auto; object-fit: cover;">
-                </div>
+            <div class="col-lg-5 text-center">
+                <img src="public/img/Asa boneka.PNG" class="img-fluid asa-profile-image asa-silhouette-profile" alt="Asa Profile">
             </div>
             <div class="col-lg-7">
                 <h2 class="fw-bold mb-4" style="color: #4A2C35;">About Me.</h2>
@@ -419,7 +415,7 @@
 
         <div class="grid-container-custom mb-5">
             <div class="strawberry-center-node"></div>
-            <div class="row g-4">
+            <div class="row g-4 mb-4">
                 
                 <div class="col-md-6">
                     <div class="card card-portofolio shadow-sm h-100">
@@ -484,8 +480,8 @@
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="model3" role="tabpanel">
-                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm d-flex align-items-center justify-content-center border" style="background-color: #fef1f4;">
-                                            <span class="text-muted small">Project 3D Ketiga</span>
+                                        <div class="ratio ratio-16x9 mb-3 rounded-4 overflow-hidden border shadow-sm">
+                                            <model-viewer src="Agromycelix.glb" alt="3D AgroMycelix Project Asset" auto-rotate camera-controls shadow-intensity="1.5" shadow-softness="0.8" exposure="1.2" environment-image="neutral"></model-viewer>
                                         </div>
                                     </div>
                                 </div>
@@ -496,7 +492,7 @@
                             <ul class="nav nav-pills nav-portfolio justify-content-center gap-2" id="meshTab" role="tablist">
                                 <li class="nav-item" role="presentation"><button class="nav-link active" id="model1-tab" data-bs-toggle="pill" data-bs-target="#model1" type="button" role="tab">Cat Model</button></li>
                                 <li class="nav-item" role="presentation"><button class="nav-link" id="model2-tab" data-bs-toggle="pill" data-bs-target="#model2" type="button" role="tab">Cherry Model</button></li>
-                                <li class="nav-item" role="presentation"><button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab">Project 3</button></li>
+                                <li class="nav-item" role="presentation"><button class="nav-link" id="model3-tab" data-bs-toggle="pill" data-bs-target="#model3" type="button" role="tab">AgroMycelix</button></li>
                             </ul>
                         </div>
                     </div>
@@ -654,7 +650,7 @@
                     Pepaya.
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup Galeri</button>
                 </div>
             </div>
         </div>
@@ -695,7 +691,7 @@
                     Hanya debunya yang terlihat
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup Galeri</button>
                 </div>
             </div>
         </div>
@@ -727,7 +723,7 @@
                     Tak semua hal dapat diselesaikan oleh kata.
                 </div>
                 <div class="text-center mt-4">
-                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal" style="font-size:0.8rem;">Tutup Galeri</button>
+                    <button type="button" class="btn btn-sm btn-outline-secondary rounded-pill px-4" data-bs-dismiss="modal">Tutup Galeri</button>
                 </div>
             </div>
         </div>
